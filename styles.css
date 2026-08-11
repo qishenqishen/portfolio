@@ -582,7 +582,13 @@ img {
 }
 
 .microdrama-kicker + .eyebrow {
+  margin-bottom: 8px;
+}
+
+.microdrama-secondary {
   margin-bottom: 14px;
+  color: rgba(16, 16, 14, 0.48);
+  font-size: 12px;
 }
 
 .record-copy h2 {
@@ -1073,6 +1079,13 @@ img {
 .role-note {
   color: var(--muted);
   font-size: 16px !important;
+  line-height: 1.2 !important;
+}
+
+.record-copy .microdrama-role-top {
+  max-width: none;
+  margin: 0 0 10px;
+  font-size: 12px !important;
   line-height: 1.2 !important;
 }
 
