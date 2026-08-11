@@ -822,6 +822,207 @@ img {
   line-height: 1.16;
 }
 
+.shortdrama-visual .vinyl {
+  right: -1.5%;
+  width: 44%;
+}
+
+.record:hover .shortdrama-visual .vinyl,
+.record.is-visible .shortdrama-visual .vinyl {
+  transform: translateX(5px) rotate(20deg);
+}
+
+.shortdrama-sleeve {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  align-content: space-between;
+  gap: 14px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  padding: 18px;
+  border: 1px solid var(--ink);
+  background:
+    linear-gradient(90deg, rgba(8, 8, 8, 0.045) 1px, transparent 1px) 0 0 / 38px 38px,
+    linear-gradient(0deg, rgba(8, 8, 8, 0.045) 1px, transparent 1px) 0 0 / 38px 38px,
+    radial-gradient(circle at 20% 24%, rgba(216, 75, 58, 0.18), transparent 24%),
+    radial-gradient(circle at 82% 18%, rgba(31, 94, 217, 0.16), transparent 26%),
+    radial-gradient(circle at 70% 82%, rgba(66, 109, 86, 0.18), transparent 28%),
+    #fbfaf7;
+  box-shadow: 0 20px 55px rgba(8, 8, 8, 0.12);
+}
+
+.shortdrama-sleeve::before {
+  content: "";
+  position: absolute;
+  inset: 64px 18px auto;
+  height: 1px;
+  background: var(--ink);
+  opacity: 0.42;
+}
+
+.shortdrama-sleeve::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 110px;
+  height: 110px;
+  border: 1px solid rgba(8, 8, 8, 0.52);
+  background:
+    linear-gradient(90deg, transparent 48%, rgba(8, 8, 8, 0.18) 49% 51%, transparent 52%),
+    linear-gradient(0deg, transparent 48%, rgba(8, 8, 8, 0.18) 49% 51%, transparent 52%);
+  opacity: 0.34;
+  transform: rotate(8deg);
+}
+
+.shortdrama-sleeve > * {
+  position: relative;
+  z-index: 1;
+}
+
+.shortdrama-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.shortdrama-phone {
+  display: grid;
+  gap: 8px;
+  width: 58%;
+  min-height: 205px;
+  margin: 8px auto 0;
+  padding: 12px;
+  border: 1px solid var(--ink);
+  border-radius: 8px;
+  background: #111;
+  box-shadow: 8px 8px 0 rgba(8, 8, 8, 0.12);
+}
+
+.phone-bar {
+  width: 38%;
+  height: 5px;
+  margin: 0 auto 4px;
+  border-radius: 5px;
+  background: var(--paper);
+  opacity: 0.8;
+}
+
+.drama-card {
+  display: grid;
+  align-content: space-between;
+  min-height: 48px;
+  padding: 8px;
+  border: 1px solid rgba(246, 243, 236, 0.6);
+  background: rgba(246, 243, 236, 0.92);
+  color: var(--ink);
+}
+
+.drama-card.is-active {
+  background: #f0b84a;
+}
+
+.drama-card span {
+  color: rgba(8, 8, 8, 0.58);
+  font-size: 9px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.drama-card b {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 0.9;
+  text-transform: lowercase;
+}
+
+.shortdrama-chain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px;
+  border: 1px solid var(--ink);
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.shortdrama-chain span {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.shortdrama-chain i {
+  display: block;
+  width: 18px;
+  height: 1px;
+  background: var(--ink);
+}
+
+.shortdrama-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.shortdrama-matrix article {
+  display: grid;
+  gap: 6px;
+  min-height: 96px;
+  padding: 10px;
+  border: 1px solid var(--ink);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.shortdrama-matrix b {
+  font-size: 10px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.shortdrama-matrix span {
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.1;
+}
+
+.shortdrama-sleeve p {
+  margin: 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--ink);
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.role-note {
+  color: var(--muted);
+  font-size: 16px !important;
+  line-height: 1.2 !important;
+}
+
+.record-copy .cn-points {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.36;
+}
+
+.record-copy .cn-points b {
+  display: inline-block;
+  margin-right: 8px;
+  color: var(--ink);
+}
+
 .mealog-case {
   padding: 0 18px 70px;
   border-bottom: 1px solid var(--ink);
