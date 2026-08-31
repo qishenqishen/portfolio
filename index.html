@@ -8,7 +8,25 @@
       name="description"
       content="Qi Shen's portfolio across user insight, content systems, AI workflows, growth experiments, and digital operations."
     >
-    <link rel="stylesheet" href="./styles.css?v=33">
+    <link rel="stylesheet" href="./styles.css?v=35">
+    <script>
+      /* Set the stored language before first paint so returning visitors never see a flash. */
+      (function () {
+        var root = document.documentElement;
+        var lang = "en";
+        try {
+          var stored = window.localStorage.getItem("portfolio-lang");
+          if (stored === "zh" || stored === "en") lang = stored;
+        } catch (error) {
+          lang = "en";
+        }
+        root.setAttribute("data-lang", lang);
+        if (lang === "zh") root.setAttribute("data-lang-pending", "");
+        window.setTimeout(function () {
+          root.removeAttribute("data-lang-pending");
+        }, 1500);
+      })();
+    </script>
   </head>
   <body>
     <audio id="site-audio" src="./assets/signal-field.wav" preload="auto" loop autoplay></audio>
@@ -28,10 +46,14 @@
         <a href="#contact">contact</a>
       </nav>
       <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-option is-active" type="button" data-lang-option="en" aria-pressed="true">EN</button>
+          <button class="lang-option" type="button" data-lang-option="zh" aria-pressed="false">中文</button>
+        </div>
         <details class="resume-menu">
           <summary>resume</summary>
           <div class="resume-panel">
-            <a href="./assets/Qi-Shen-Resume-CN.pdf" download>中文简历</a>
+            <a href="./assets/Qi-Shen-Resume-CN.pdf" download>Chinese resume</a>
             <a href="./assets/Qi-Shen-Resume-EN.pdf" download>English resume</a>
           </div>
         </details>
@@ -106,27 +128,27 @@
               </figure>
               <div class="intro-copy">
                 <div class="intro-welcome">
-                  <p class="intro-kicker">Hey，欢迎来到</p>
-                  <h2>Shen Qi 的「神奇」Page。</h2>
+                  <p class="intro-kicker">Hey, welcome to</p>
+                  <h2>Shen Qi's Curious Page.</h2>
                   <p class="intro-tags">PEOPLE · CONTENT · DATA · TASTE · CURIOSITY</p>
                 </div>
                 <div class="intro-strengths" aria-label="Core strengths">
                   <article class="intro-strength">
                     <span>01</span>
-                    <h3>用户与内容洞察</h3>
-                    <p>从行为、内容与场景里找到真正值得关注的信号。</p>
+                    <h3>User &amp; Content Insight</h3>
+                    <p>Find the signals that actually matter inside behavior, content, and context.</p>
                     <small>USER BEHAVIOR · CONTENT SENSE · EMPATHY</small>
                   </article>
                   <article class="intro-strength">
                     <span>02</span>
-                    <h3>策略判断</h3>
-                    <p>从“发生了什么”，继续追到“为什么，以及下一步做什么”。</p>
+                    <h3>Strategic Judgment</h3>
+                    <p>Move from "what happened" to "why, and what we do next".</p>
                     <small>DATA · PATTERN · DECISION</small>
                   </article>
                   <article class="intro-strength">
                     <span>03</span>
-                    <h3>策划与落地</h3>
-                    <p>把模糊的想法变成方案、实验和真正发生的结果。</p>
+                    <h3>Planning &amp; Execution</h3>
+                    <p>Turn vague ideas into plans, experiments, and results that actually happen.</p>
                     <small>EXPERIMENT · EXECUTION · ITERATION</small>
                   </article>
                 </div>
@@ -142,40 +164,79 @@
           <span>02</span>
         </div>
         <div class="experience-list">
-          <article class="experience-card is-featured">
-            <figure class="experience-visual">
-              <div class="demo-window" aria-label="Favie restaurant AI agent demo preview">
+          <article class="experience-card is-featured is-zooclaw">
+            <figure class="experience-visual zoo-visual">
+              <div class="demo-window" aria-label="Favie restaurant AI agent web prototype preview">
                 <div class="demo-window-bar" aria-hidden="true">
                   <span></span>
                   <span></span>
                   <span></span>
-                  <strong>Favie agent demo</strong>
+                  <strong>favie agent demo</strong>
                 </div>
                 <div class="demo-window-screen">
-                  <iframe src="./assets/favie-agent-demo.html" title="Favie restaurant AI agent prototype" loading="lazy"></iframe>
+                  <iframe src="./assets/favie-agent-demo.html" title="Favie restaurant AI agent web prototype" loading="lazy"></iframe>
+                  <span class="demo-flag">Web prototype</span>
                 </div>
               </div>
               <figcaption>
-                Restaurant AI agent prototype for reviews, content planning, and multi-location operations.
-                <a href="./assets/favie-agent-demo.html" target="_blank" rel="noopener">open full demo</a>
+                <span class="zoo-caption">Web prototype built to visualize the restaurant agent experience.</span>
+                <a class="zoo-demo-link" href="./assets/favie-agent-demo.html" target="_blank" rel="noopener">view web demo</a>
+                <span class="zoo-confidential">Internal ZooClaw agent workflows are not publicly shown.</span>
               </figcaption>
             </figure>
-            <div class="experience-copy">
+
+            <div class="zoo-head">
               <p class="experience-meta">ZooClaw · Los Angeles · 2026</p>
-              <h2>AI Product Operations Intern</h2>
-              <p class="company-note">
-                ZooClaw builds AI tools for restaurant brands, helping teams manage social content, reviews, customer signals, and location-level operations.
-              </p>
-              <p>
-                Worked across product research, PRD writing, agent workflow design, data infrastructure, and demo delivery for a B2B restaurant operations AI agent.
-              </p>
-              <ul>
-                <li>Translated restaurant social-operation pain points into mobile product requirements for content management, sentiment monitoring, auto-reply, and multi-location dashboards.</li>
-                <li>Designed modular agent skills for sentiment detection, review classification, reply scheduling, content planning, and human review workflows.</li>
-                <li>Built Python-based social data pipelines across TikTok, Instagram, and YouTube, then organized 15+ dining content formats into a reusable strategy taxonomy.</li>
-                <li>Used Claude Code and OpenAI Codex to prototype an internal demo supporting product validation and AI strategy generation for 30+ restaurant verticals.</li>
-                <li>Helped shape a modular review-response workflow that reduced average response time by 40%.</li>
-              </ul>
+              <h2>AI-Native Restaurant<br>Operations Agent</h2>
+              <p class="zoo-role">AI Product Operations Intern · B2B Restaurant AI Agent</p>
+              <p class="zoo-overview">I designed the agent workflows behind review intelligence and social planning, and built a working prototype to validate the experience before engineering.</p>
+              <p class="zoo-overview-sub">The core question was never what the AI could generate — it was which decisions the agent should own, and which must stay human.</p>
+            </div>
+
+            <div class="zoo-blocks">
+              <article class="zoo-block">
+                <span class="zoo-block-index">01</span>
+                <div>
+                  <h3>Agent Workflow Design</h3>
+                  <p>Rebuilt two fragmented workflows as agent task chains — not another dashboard or a single-step AI writer.</p>
+                  <small>Reviews · monitor → classify → prioritize → draft → human review → learn</small>
+                  <small>Social · cross-platform data → content taxonomy → strategy</small>
+                </div>
+              </article>
+              <article class="zoo-block">
+                <span class="zoo-block-index">02</span>
+                <div>
+                  <h3>Human in the Loop</h3>
+                  <p>Set the automation boundary by risk: routine replies auto-schedule, ambiguous cases wait for review, high-risk issues escalate to a human.</p>
+                  <small>Auto · Suggest · Escalate</small>
+                </div>
+              </article>
+              <article class="zoo-block">
+                <span class="zoo-block-index">03</span>
+                <div>
+                  <h3>0→1 Prototyping</h3>
+                  <p>Turned workflow concepts into a working web demo with Claude Code and OpenAI Codex, so hypotheses could be tested with real interaction.</p>
+                  <small>Idea · Build · Validate · Iterate</small>
+                </div>
+              </article>
+              <article class="zoo-block zoo-block-impact">
+                <span class="zoo-block-index">04</span>
+                <div>
+                  <h3>Impact</h3>
+                  <div class="zoo-impact">
+                    <span><b>40%</b><small>response time reduction</small></span>
+                    <span><b>30+</b><small>restaurant verticals</small></span>
+                  </div>
+                  <p>Average review response time down 40%; automated monthly planning across 30+ restaurant verticals.</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="zoo-agent-strip">
+              <p class="zoo-agent-label">Agent patterns</p>
+              <p class="zoo-agent-patterns">Workflow Takeover<i>·</i>Background Monitoring<i>·</i>Thinking Partner</p>
+              <p class="zoo-agent-flow"><span>Monitor</span><i>→</i><span>Understand</span><i>→</i><span>Decide</span><i>→</i><span>Human Review</span><i>→</i><span>Act</span><i>→</i><span>Learn</span></p>
+              <p class="zoo-agent-disclaimer">Abstract product logic, not ZooClaw system architecture.</p>
             </div>
           </article>
 
@@ -625,9 +686,9 @@
         <div class="photo-archive">
           <div class="photo-title" aria-hidden="true">SHOT ON FILM</div>
           <p class="photo-intro">
-            保持好奇，也保持感知。<br><br>
-            摄影让我保持对人、情绪与生活细节的敏感，也让我习惯从不同视角理解同一件事。对我来说，好奇、共情与审美并不只是兴趣，它们也是理解用户和创造产品的方式。<br><br>
-            我希望把对生活的感知，变成真正被需要的产品；把脑海里的想法，落地成千千万万用户手中的日常。
+            Stay curious. Stay perceptive.<br><br>
+            Photography keeps me sensitive to people, emotion, and the small details of everyday life — and trains me to see the same thing from more than one angle. Curiosity, empathy, and taste are not just interests to me; they are how I understand users and build products.<br><br>
+            I want to turn what I notice about life into products people actually need, and turn the ideas in my head into something thousands of people use every day.
           </p>
           <div class="photo-divider" data-group="color"><span>color roll</span><span>018</span></div>
 
@@ -827,7 +888,7 @@
           <p>contact</p>
           <span>Thanks for visiting my page.</span>
         </div>
-        <h2 class="contact-email-display">联系方式/contact</h2>
+        <h2 class="contact-email-display">Contact</h2>
         <div class="contact-grid" aria-label="Contact details">
           <article class="contact-card">
             <span>Email</span>
@@ -854,7 +915,7 @@
             <a href="http://www.linkedin.com/in/qi-shen-profile" target="_blank" rel="noopener">linkedin.com/in/qi-shen-profile</a>
           </article>
         </div>
-        <p class="contact-closing">期待与您一起共事：）</p>
+        <p class="contact-closing">Looking forward to working with you :)</p>
         <footer>
           <span>© 2026 Qi Shen</span>
           <span>Song - Signal Field No. 1</span>
@@ -862,6 +923,7 @@
       </section>
     </main>
 
-    <script src="./script.js?v=17"></script>
+    <script src="./i18n.js?v=1"></script>
+    <script src="./script.js?v=18"></script>
   </body>
 </html>

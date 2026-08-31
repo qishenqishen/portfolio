@@ -1,9 +1,13 @@
 let isSoundOn = false;
 
+function uiText(text) {
+  return window.I18N && typeof window.I18N.t === "function" ? window.I18N.t(text) : text;
+}
+
 function updateSoundButton() {
   const button = document.querySelector(".sound-toggle");
   if (!button) return;
-  button.textContent = isSoundOn ? "sound on" : "sound off";
+  button.textContent = uiText(isSoundOn ? "sound on" : "sound off");
   button.setAttribute("aria-pressed", String(isSoundOn));
 }
 
@@ -53,7 +57,8 @@ function fallbackCopy(text) {
 function copyContact(button) {
   const value = button.dataset.copy || button.dataset.email || "";
   const label = button.dataset.label || button.textContent || "copy";
-  button.textContent = "copied";
+  button.dataset.copying = "true";
+  button.textContent = uiText("copied");
 
   (async () => {
     try {
@@ -68,7 +73,8 @@ function copyContact(button) {
   })();
 
   window.setTimeout(() => {
-    button.textContent = label;
+    delete button.dataset.copying;
+    button.textContent = uiText(label);
   }, 1600);
 }
 
@@ -157,16 +163,24 @@ function setupPhotoArchive() {
     });
   }
 
+  function updateListButtonLabel() {
+    if (!listButton) return;
+    const isList = archive.classList.contains("is-list");
+    listButton.textContent = uiText(isList ? "grid" : "list");
+  }
+
   scaleInput?.addEventListener("input", applyScale);
   typeSelect?.addEventListener("change", applyFilters);
   locationSelect?.addEventListener("change", applyFilters);
 
   listButton?.addEventListener("click", () => {
-    const isList = archive.classList.toggle("is-list");
-    listButton.textContent = isList ? "grid" : "list";
-    listButton.setAttribute("aria-pressed", String(isList));
+    archive.classList.toggle("is-list");
+    listButton.setAttribute("aria-pressed", String(archive.classList.contains("is-list")));
+    updateListButtonLabel();
     applyScale();
   });
+
+  window.addEventListener("portfolio-languagechange", updateListButtonLabel);
 
   applyFilters();
   applyScale();
@@ -179,6 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.setInterval(updateLocalTime, 30000);
 
   const soundButton = document.querySelector(".sound-toggle");
+  window.addEventListener("portfolio-languagechange", updateSoundButton);
   soundButton?.addEventListener("click", async () => {
     if (isSoundOn) {
       stopSound();
