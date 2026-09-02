@@ -137,6 +137,7 @@
     "used Figma, Claude Code, and user feedback to move from concept deck to interactive demo": "用 Figma、Claude Code 与用户反馈，把概念 deck 推进到可交互 Demo",
     "process evidence": "过程留档",
     "download idea deck": "下载 Idea Deck",
+    "open interactive demo": "打开交互 Demo",
     "Origin: everyday meal photos become quiet stories.": "起点：日常随手拍的餐食照片，变成安静的故事。",
     "Updated MVP flow: meal memories, saved photos, company, optional permissions, and quiet guest entry.": "更新后的 MVP 流程：用餐记忆、照片留存、同行的人、可选权限与安静的访客入口。",
     "Interaction metaphor: a meal, a relationship, a month of shared time.": "交互隐喻：一餐饭、一段关系、一个月的共处时光。",

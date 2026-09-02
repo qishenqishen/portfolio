@@ -1291,6 +1291,12 @@ img {
   text-transform: lowercase;
 }
 
+.mealog-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 18px;
+}
+
 .slow-social-points {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

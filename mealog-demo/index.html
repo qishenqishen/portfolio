@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mealog - Interactive Product Demo</title>
+    <meta
+      name="description"
+      content="An interactive Mealog product demo for logging meals, people, places, and quiet monthly memories."
+    >
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="../#activities" aria-label="Back to Qi Shen portfolio">Qi Shen / portfolio</a>
+      <span>MEALOG PRODUCT DEMO</span>
+      <button class="ghost-button" type="button" data-reset>reset demo</button>
+    </header>
+
+    <main class="demo-shell">
+      <section class="product-panel" aria-label="Mealog interactive product demo">
+        <div class="story-column">
+          <p class="eyebrow">slow social / meal memory / product prototype</p>
+          <h1>Meals become memories when people, places, and small feelings stay connected.</h1>
+          <p class="lede">
+            Mealog is a soft social product concept: log a meal, remember who was there,
+            and let the month slowly turn into a table of relationships.
+          </p>
+          <div class="signal-row" aria-label="Product signals">
+            <span><b data-stat="count">0</b><small>meal memories</small></span>
+            <span><b data-stat="people">0</b><small>people around the table</small></span>
+            <span><b data-stat="places">0</b><small>places remembered</small></span>
+          </div>
+          <div class="product-notes">
+            <article>
+              <span>01</span>
+              <strong>Low-pressure sharing</strong>
+              <p>No public feed by default. Memories can stay private, shared with one person, or become a monthly table.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <strong>Relationship-aware logging</strong>
+              <p>The product cares less about calories and more about company, context, rhythm, and emotional texture.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <strong>AI-assisted recap</strong>
+              <p>Instead of writing for the user, Mealog gently summarizes patterns the user may not have noticed.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="phone-wrap" aria-label="Mealog mobile preview">
+          <div class="phone">
+            <div class="phone-top">
+              <span>9:41</span>
+              <i></i>
+              <span>mealog</span>
+            </div>
+            <nav class="phone-tabs" aria-label="Demo phone views">
+              <button class="is-active" type="button" data-tab="today">today</button>
+              <button type="button" data-tab="month">month</button>
+              <button type="button" data-tab="people">people</button>
+            </nav>
+            <section class="phone-screen" data-panel="today"></section>
+            <section class="phone-screen" data-panel="month" hidden></section>
+            <section class="phone-screen" data-panel="people" hidden></section>
+          </div>
+        </div>
+
+        <aside class="memory-console" aria-label="Create a meal memory">
+          <div class="console-header">
+            <p class="eyebrow">try the flow</p>
+            <h2>Add one meal memory</h2>
+          </div>
+
+          <label class="field">
+            <span>meal title</span>
+            <input data-title type="text" value="Matcha pancakes after class" maxlength="56">
+          </label>
+
+          <label class="field">
+            <span>place</span>
+            <input data-place type="text" value="Echo Park Cafe" maxlength="38">
+          </label>
+
+          <div class="field">
+            <span>who was there</span>
+            <div class="chip-grid" data-people-picker></div>
+          </div>
+
+          <div class="field">
+            <span>mood</span>
+            <div class="chip-grid" data-mood-picker></div>
+          </div>
+
+          <div class="field">
+            <span>memory photo</span>
+            <div class="photo-picker" data-photo-picker></div>
+          </div>
+
+          <label class="field">
+            <span>small note</span>
+            <textarea data-note maxlength="120">We stayed longer than planned and made a tiny map of summer cafes.</textarea>
+          </label>
+
+          <div class="console-actions">
+            <button class="primary-button" type="button" data-add>save memory</button>
+            <button class="ghost-button" type="button" data-recap>make monthly recap</button>
+          </div>
+        </aside>
+      </section>
+
+      <section class="insight-board" aria-label="Mealog monthly insight board">
+        <article>
+          <p class="eyebrow">memory stream</p>
+          <div class="memory-list" data-memory-list></div>
+        </article>
+        <article>
+          <p class="eyebrow">relationship table</p>
+          <div class="connection-board" data-connection-board></div>
+        </article>
+        <article>
+          <p class="eyebrow">AI-assisted monthly note</p>
+          <div class="recap-card" data-recap-card></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
