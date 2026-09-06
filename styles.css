@@ -1223,6 +1223,43 @@ img {
   gap: 18px;
 }
 
+.mealog-live-demo {
+  grid-column: 1 / -1;
+  overflow: hidden;
+  border: 1px solid var(--ink);
+  background: #101010;
+  box-shadow: 10px 10px 0 var(--ink);
+}
+
+.mealog-live-demo-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(246, 243, 236, 0.22);
+  color: #f6f3ec;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+.mealog-live-demo-bar a {
+  padding-bottom: 3px;
+  border-bottom: 1px solid currentColor;
+  color: #f6f3ec;
+}
+
+.mealog-live-demo iframe {
+  display: block;
+  width: 100%;
+  height: min(78vh, 760px);
+  min-height: 640px;
+  border: 0;
+  background: #f6f3ec;
+}
+
 .mealog-frame,
 .prototype-card {
   margin: 0;
@@ -2925,6 +2962,10 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .mealog-live-demo iframe {
+    min-height: 700px;
+  }
+
   .mealog-frame.is-large {
     grid-row: auto;
   }
@@ -3503,6 +3544,20 @@ footer {
     align-items: flex-start;
     flex-direction: column;
     gap: 10px;
+  }
+
+  .mealog-live-demo {
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+
+  .mealog-live-demo-bar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mealog-live-demo iframe {
+    min-height: 760px;
   }
 
   .mealog-frame figcaption {
