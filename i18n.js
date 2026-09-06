@@ -321,7 +321,7 @@
     "iQIYI content product operations dashboard": "爱奇艺内容产品运营看板",
     "iQIYI IP adaptation visual board": "爱奇艺 IP 改编视觉板",
     "iQIYI poster wall": "爱奇艺海报墙",
-    "Official iQIYI drama poster references": "爱奇艺官方剧集海报参考",
+    "Chinese iQIYI drama poster references": "爱奇艺中文剧集海报参考",
     "iQIYI poster for Sisterhood": "《南洋女儿情》爱奇艺海报",
     "iQIYI poster for Mysterious Lotus Casebook": "《莲花楼》爱奇艺海报",
     "iQIYI poster for Story of Kunning Palace": "《宁安如梦》爱奇艺海报",
